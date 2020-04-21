@@ -9,7 +9,7 @@ import java.util.Stack;
  * from the right side of the array. If greater element is not there add -1.
  */
 public class NearestGreaterToRight {
-    private static int[] findGreaterElementArray(int[] arr) {
+    private static int[] findRightGreaterElementArray(int[] arr) {
         int n = arr.length;
         if (n == 0) return arr;
         int resarr[] = new int[n];
@@ -34,6 +34,6 @@ public class NearestGreaterToRight {
 
     public static void main(String[] args) {
         int arr[] = new int[]{1, 3, 2, 4};
-        System.out.println(Arrays.toString(findGreaterElementArray(arr)));
+        System.out.println(Arrays.toString(findRightGreaterElementArray(arr)));
     }
 }

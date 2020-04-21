@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 /**
- * arr[] = [1,3,2,4] o/p [3,4,4,-1]
+ * arr[] = [1,3,2,4] o/p [-1,-1,3,-1]
  * One Array is given for each element find next greater element
  * from the Left side of the array. If greater element is not there add -1.
  */
