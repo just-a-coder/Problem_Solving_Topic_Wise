@@ -9,8 +9,8 @@ public class MaxCardsPoint_1423 {
         }
         maxscore = suffixsum;
         for (int i = 0; i < k; i++) {
-            prefixsum += cardPoints[i];
             suffixsum -= cardPoints[n - k + i];
+            prefixsum += cardPoints[i];
             maxscore = Math.max(maxscore, suffixsum + prefixsum);
         }
 
