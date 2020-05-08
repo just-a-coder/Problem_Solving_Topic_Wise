@@ -23,7 +23,6 @@ public class NearestGreaterToRight {
                 while (!st.isEmpty() && st.peek() <= arr[i]) {
                     st.pop();
                 }
-
                 if(st.isEmpty()) resarr[i] = -1;
                 else resarr[i] = st.peek();
             }
