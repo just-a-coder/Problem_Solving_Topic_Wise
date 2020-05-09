@@ -147,4 +147,23 @@ public class LinkedList {
         }
         return slowPtr.data;
     }
+
+    Node removeParticularValue(int data) {
+        Node node = headNode;
+        while (node != null && node.data == data) {
+            headNode = node.next;
+            node = node.next;
+        }
+        if (headNode == null) {
+            return headNode;
+        }
+        while (node.next != null) {
+            if (node.next.data == data) {
+                node.next = node.next.next;
+            } else {
+                node = node.next;
+            }
+        }
+        return headNode;
+    }
 }

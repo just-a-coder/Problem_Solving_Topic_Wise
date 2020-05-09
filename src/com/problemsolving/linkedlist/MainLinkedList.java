@@ -7,9 +7,9 @@ public class MainLinkedList {
         System.out.println("LinkedList isEmpty():"+llist.isEmpty());
         llist.insertAtEnd(7);
         llist.insertAtEnd(3);
-        llist.insertAtEnd(9);
-        llist.insertAtEnd(5);
-        llist.insertAtHead(4);
+        llist.insertAtEnd(1);
+        llist.insertAtEnd(1);
+        llist.insertAtHead(1);
         llist.insertAtHead(1);
         System.out.println("LinkedList isEmpty():"+llist.isEmpty());
         llist.printSL();
@@ -25,5 +25,7 @@ public class MainLinkedList {
         llist.printSL();
         System.out.println("Detect Cycle: "+llist.detectCycleinSL());
         System.out.println("MiddleNode: "+llist.middleNode());
+        llist.removeParticularValue(1);
+        llist.printSL();
     }
 }
