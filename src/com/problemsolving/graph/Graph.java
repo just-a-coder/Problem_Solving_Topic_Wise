@@ -1,50 +1,41 @@
 package com.problemsolving.graph;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Graph {
-    // Total Number Of Vertices In Graph
-    int vertices;
+    private int vertices;
+    private LinkedList<Integer> adjList;
 
-    ////An array of linked lists to store adjacent vertices.
-    DoublyLinkedList<Integer> adjacencyList[];
+    static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
+        adj.get(u).add(v);
+        adj.get(v).add(u);
+    }
 
-    public Graph(int vertices) {
-        this.vertices = vertices;
-        adjacencyList = new DoublyLinkedList[vertices];
-
-        for (int i = 0; i < vertices; i++) {
-            adjacencyList[i] = new DoublyLinkedList();
+    static void printGraph(ArrayList<ArrayList<Integer>> adj) {
+        for (int i = 0; i < adj.size(); i++) {
+            System.out.print(" Adjacency List of Vertex i: "+i);
+            for (int j = 0; j < adj.get(i).size(); j++) {
+                System.out.print(" -> "+adj.get(i).get(j));
+            }
+            System.out.println();
         }
     }
 
-    //Adds an Edge from source vertex to destination vertex
-    void addEdge(int source,int destination){
-        if (source < vertices && destination < vertices) {
-            this.adjacencyList[source].insertAtEnd(destination);
+    public static void main(String[] args) {
+        int V = 4;
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
 
-            //for undirected graph uncomment the line below
-            //this.adjacencyList[destination].insertAtEnd(source);
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
         }
-    }
 
-    public void printGraph()
-    {
-        System.out.println(">>Adjacency List of Directed Graph<<");
-        for (int i = 0; i < vertices; i++)
-        {
-            if(adjacencyList[i]!=null){
-                System.out.print("|" + i + "| => ");
+        // Adding Edges
+        addEdge(adj, 0, 1);
+        addEdge(adj, 0, 2);
+        addEdge(adj, 0, 3);
+        addEdge(adj, 1, 2);
 
-                DoublyLinkedList<Integer>.Node temp = adjacencyList[i].getHeadNode();
-                while (temp != null)
-                {
-                    System.out.print("[" + temp.data + "] -> ");
-                    temp = temp.nextNode;
-                }
-                System.out.println("null");
-            }
-            else{
-                System.out.println("|" + i + "| => "+ "null");
-            }
-        }
+        printGraph(adj);
     }
 }
