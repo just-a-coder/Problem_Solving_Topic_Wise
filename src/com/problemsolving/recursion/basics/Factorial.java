@@ -1,4 +1,4 @@
-package com.problemsolving.recursion;
+package com.problemsolving.recursion.basics;
 
 public class Factorial {
     public static void main(String[] args) {
