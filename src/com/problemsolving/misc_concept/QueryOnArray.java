@@ -19,7 +19,16 @@ public class QueryOnArray {
     public static void findQueryResult(int left, int right, int arr[]) {
         arr[left] = ++arr[left];
         arr[right+1] = --arr[right+1];
+        // Instead of 1 if value K has to be added, then left+k and right-k
     }
+
+    /**
+     * Now why are we adding and then deleting from right+1 ??
+     * This is because, a[i] = a[i]+ a[i-1] (as we know, if previous value has 5, then you have to add
+     * that 5 with current value to get final value).
+     * Now till when we will add that previous value---- till right element, and right+1 we will stop,
+     * that's why in right+1 we are subtracting same number(k) to nullify the previous add effect.
+     */
 
     public static void main(String[] args) {
         int arr[] = new int[10];
