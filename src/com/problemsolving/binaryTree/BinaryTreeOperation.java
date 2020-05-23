@@ -1,5 +1,8 @@
 package com.problemsolving.binaryTree;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class BinaryTreeOperation {
     int maxDepth(TreeNode root) {
         // Root being null means tree doesn't exist.
@@ -72,4 +75,22 @@ public class BinaryTreeOperation {
         }
     }
 
+    /**
+     * Traverse Level Order and Print all the Element
+     */
+    public void levelOrderTraversal(TreeNode root) {
+        if(root == null) return;
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            System.out.print(node.val);
+            if (node.left != null) {
+                queue.addLast(node.left);
+            }
+            if (node.right != null) {
+                queue.addLast(node.right);
+            }
+        }
+    }
 }

@@ -87,5 +87,7 @@ public class BinaryTree {
         prettyPrintTree(tree.root);
         System.out.println("Max Depth: " + treeOperation.maxDepth(tree.root));
         System.out.println(treeOperation.isCousins(tree.root, 3, 2));
+        System.out.println("Level Order Traversal: ");
+        treeOperation.levelOrderTraversal(tree.root);
     }
 }
