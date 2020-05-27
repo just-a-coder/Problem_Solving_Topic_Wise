@@ -72,11 +72,12 @@ public class BinaryTree {
     // Driver code
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
-        tree.root = new TreeNode(1);
+        tree.root = new TreeNode(2);
         tree.root.left = new TreeNode(3);
-        tree.root.right = new TreeNode(2);
-        tree.root.left.right = new TreeNode(5);
-        tree.root.right.left = new TreeNode(4);
+        tree.root.right = new TreeNode(1);
+        tree.root.left.left = new TreeNode(3);
+        tree.root.left.right = new TreeNode(1);
+        tree.root.right.right = new TreeNode(1);
 
 //        tree.root.right.left = new TreeNode(5);
 //        tree.root.right.right = new TreeNode(6);
@@ -85,9 +86,10 @@ public class BinaryTree {
         BinaryTreeOperation treeOperation = new BinaryTreeOperation();
         //System.out.println(treeNodeToString(tree.root));
         prettyPrintTree(tree.root);
-        System.out.println("Max Depth: " + treeOperation.maxDepth(tree.root));
-        System.out.println(treeOperation.isCousins(tree.root, 3, 2));
-        System.out.println("Level Order Traversal: ");
-        treeOperation.levelOrderTraversal(tree.root);
+//        System.out.println("Max Depth: " + treeOperation.maxDepth(tree.root));
+//        System.out.println(treeOperation.isCousins(tree.root, 3, 2));
+//        System.out.println("Level Order Traversal: ");
+//        treeOperation.levelOrderTraversal(tree.root);
+        System.out.println("No Of Paths: "+treeOperation.pseudoPalindromicPaths(tree.root));
     }
 }
