@@ -1,4 +1,3 @@
-/*
 package com.problemsolving.contest;
 
 import com.problemsolving.heap.FrequencySort;
@@ -6,30 +5,21 @@ import com.problemsolving.heap.FrequencySort;
 import java.util.*;
 
 public class ContestTest {
-    int count = 0;
-    public int pseudoPalindromicPaths (TreeNode root) {
 
-    }
-
-    static boolean isPalindrome(String str) {
-        List<Character> alist = new ArrayList<>();
-        for (char ch: str.toCharArray()){
-            if (alist.contains(ch)) {
-                alist.remove(ch);
-            } else {
-                alist.add(ch);
+    public static int numIdenticalPairs(int[] nums) {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
             }
         }
-
-        if ((alist.size() % 2 == 0 && alist.size() == 0) || (alist.size() % 2 == 1 && alist.size() <= 1)) {
-            return true;
-        } else {
-            return false;
-        }
+        return count;
     }
 
     public static void main(String[] args) {
-        String word= "leetcode";
-        System.out.println(maxVowels(word,3));
+        int arr[] = new int[]{1,2,3,1,1,3};
+        System.out.println(numIdenticalPairs(arr));
     }
-}*/
+}
