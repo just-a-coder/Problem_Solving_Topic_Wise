@@ -5,7 +5,7 @@ import java.util.*;
 public class FractionalKnapSack {
     public static double getMaxValue(double[] w, double[] v, double c) {
         int len = v.length;
-        List<Item> itemlist = new ArrayList();
+        List<Item> itemlist = new ArrayList<>();
         for(int i = 0; i < len; i++){
             Item item = new Item(w[i],v[i],i);
             itemlist.add(item);
